@@ -1,0 +1,50 @@
+/* line 1, static/scss/app/home.scss */
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f3f1; }
+
+/* line 10, static/scss/app/home.scss */
+.body-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%; }
+
+/* line 19, static/scss/app/home.scss */
+.app {
+  position: relative;
+  height: 100%;
+  width: 70%;
+  background-color: red;
+  display: block; }
+  /* line 28, static/scss/app/home.scss */
+  .app .methods {
+    text-align: center;
+    padding-top: 20px;
+    width: 100%;
+    height: 100px; }
+    /* line 37, static/scss/app/home.scss */
+    .app .methods div {
+      display: inline-block; }
+    /* line 42, static/scss/app/home.scss */
+    .app .methods button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 50px;
+      color: white;
+      background-color: purple;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer; }
+  /* line 61, static/scss/app/home.scss */
+  .app .blocks {
+    position: relative;
+    top: 200px;
+    width: clamp(200px, 85%, 100%); }

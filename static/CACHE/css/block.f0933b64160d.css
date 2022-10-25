@@ -1,0 +1,59 @@
+/* line 3, static/scss/app/block.scss */
+.block {
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff; }
+  /* line 18, static/scss/app/block.scss */
+  .block .drag-and-drop {
+    /* list-style-image:none; */
+    position: relative; }
+  /* line 23, static/scss/app/block.scss */
+  .block .fields {
+    position: relative;
+    left: 30px;
+    top: 10px; }
+  /* line 30, static/scss/app/block.scss */
+  .block .field {
+    display: block;
+    margin-bottom: 20px; }
+  /* line 38, static/scss/app/block.scss */
+  .block .active {
+    position: relative;
+    left: 95%;
+    top: 10px; }
+  /* line 44, static/scss/app/block.scss */
+  .block .delete {
+    position: absolute;
+    right: 20px;
+    bottom: 5px; }
+  /* line 52, static/scss/app/block.scss */
+  .block .functions ul {
+    position: relative;
+    left: 2%;
+    width: 50%;
+    list-style: none; }
+  /* line 59, static/scss/app/block.scss */
+  .block .functions li {
+    display: inline-block;
+    margin-right: 20px; }
+    /* line 63, static/scss/app/block.scss */
+    .block .functions li .function-icon {
+      z-index: 2;
+      width: 20px;
+      height: 20px;
+      fill: none; }
+    /* line 70, static/scss/app/block.scss */
+    .block .functions li .inactive {
+      stroke: grey; }
+    /* line 74, static/scss/app/block.scss */
+    .block .functions li .in-progress {
+      stroke: blue; }
+    /* line 80, static/scss/app/block.scss */
+    .block .functions li .active {
+      stroke: green; }
+  /* line 87, static/scss/app/block.scss */
+  .block .functions label {
+    display: none; }

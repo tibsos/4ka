@@ -29,61 +29,52 @@
         <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
-        <link rel='stylesheet' href="{%static 'css/app/home.css'%}">
         {% compress css %}
+            <link rel='stylesheet' href="{%static 'scss/app/home.scss'%}" type="text/x-scss">
+            <link rel='stylesheet' href="{%static 'scss/app/nav.scss'%}" type="text/x-scss">
             <link rel='stylesheet' href="{%static 'scss/app/block.scss'%}" type="text/x-scss">
         {% endcompress %}
     </head>
 
     <body>
 
-        <div class='nav'>
-            <div class="logo"><a href="{%url 'app:home'%}">ssilo4ka logo</a></div>
-            <div class="left">
-                <ul class="links">
-                    <li class="link">
-                        <a href="{%url 'app:home'%}">Ссылки</a>
-                    </li>
-                    <li>
-                        <a href="{%url 'app:design'%}">Дизайн</a>
-                    </li>
-                    <li>
-                        <a href="{%url 'app:analytics'%}">Аналитика</a>
-                    </li>
-                </ul>   
-            </div>
-            <div class="right">
-                <ul class="links-right">
-                    <li>
-                        <a href="#">Премиум</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <a href="{%url 'user:logout'%}">Выйти</a>
-                    </li>
+        <div class="body-inner">    
 
-                </ul>
+            <div class='nav'>
+                <div class="logo"><a href="{%url 'app:home'%}">ssilo4ka logo</a></div>
+                <div class="left">
+                    <ul>
+                       
+                    </ul>   
+                </div>
+                <div class="right">
+                    <ul>
+                      
+                    </ul>
+                </div>
             </div>
-        </div>
-        
-        <div class="app">
-            <div class="editable">
-
             
+            <div class="app">
+
                 <div class="methods">
-                    <form method="POST">
-                        {%csrf_token%}
-                    <button hx-post="{%url 'app:add-link'%}" hx-target="#blocks">Добавить новую ссылку</button>
-                    </form>
-                    <button id="delete-all">Удалить все</button>
+
+                    <div>
+                        <form method="POST">
+                            {%csrf_token%}
+                        <button hx-post="{%url 'app:add-link'%}" hx-target="#blocks">Добавить новую ссылку</button>
+                        </form>
+                    </div>
+
+                    <div>
+                        <button id="delete-all">Удалить все</button>
+                    </div>
+                    
                 </div>
 
-                <div id="blocks">
+                <div id="blocks" class="blocks">
                     {%include 'blocks.html'%}
                 </div>
                 
-
                 <div id="delete-all-form" class="delete-all" style="display:none;">
                     <h4>Начнем с чистого листа?</h4>
                     <form method="POST">
@@ -92,10 +83,13 @@
                     </form>
                     <button id="cancel">Отмена</button>
                 </div>
+
             </div>
 
             <div class="preview">
-
+                <div class="phone"> 
+                    
+                </div>
             </div>
         </div>
     </body>

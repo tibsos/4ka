@@ -1,0 +1,66 @@
+/* line 1, static/scss/app/home.scss */
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f3f1; }
+
+/* line 15, static/scss/app/home.scss */
+.body-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block; }
+
+/* line 30, static/scss/app/home.scss */
+.app {
+  height: 100%;
+  width: 70%;
+  border-right: 1px solid lightgrey;
+  display: block; }
+  /* line 40, static/scss/app/home.scss */
+  .app .methods {
+    text-align: center;
+    overflow: hidden;
+    padding-top: 20px;
+    width: 100%;
+    height: 100px; }
+    /* line 50, static/scss/app/home.scss */
+    .app .methods div {
+      display: inline-block;
+      margin-right: 10px; }
+    /* line 57, static/scss/app/home.scss */
+    .app .methods button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 50px;
+      color: white;
+      background-color: purple;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer; }
+  /* line 76, static/scss/app/home.scss */
+  .app .blocks {
+    position: relative;
+    left: 25%;
+    top: 20px;
+    width: 50%; }
+
+/* line 87, static/scss/app/home.scss */
+.preview {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center; }
+  /* line 96, static/scss/app/home.scss */
+  .preview .phone {
+    width: 60%;
+    height: 80%;
+    border-radius: 20px;
+    border: 1px solid black; }

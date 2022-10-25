@@ -1,14 +1,29 @@
+
+
 .block{
-    border: 1px solid black;
+    
+    width:100%;
+
+    background-color: white;
+    
+    padding:10px;
+
     border-radius:20px;
-    margin-bottom:20px;
+    
+    margin-bottom:30px;
+
+    box-shadow:  5px 5px 7px #d9d9d9,
+             -5px -5px 7px #ffffff;
 
     .drag-and-drop{
+
         /* list-style-image:none; */
         position:relative;
+        
     }
     
     .fields{
+
         position:relative;
 
         left:30px;
@@ -16,22 +31,150 @@
     }
 
     .field{
-        
 
         display:block;
         margin-bottom:20px;
 
+        border:none;
+
+    }
+
+    .field:focus{
+
+        outline:none;
+
     }
 
     .active{
+
         position:relative;
         left:95%;
-        top:10px;   
+        top:10px;  
+
     }
 
     .delete{
-        position:relative;
-        left:95%;
-        bottom:10px;
+
+        position:absolute;
+        right:20px;
+        bottom:5px;
+
+    }
+
+    .functions{
+        
+        ul{
+
+            position:relative;
+            left:2%;
+            width:50%;
+            list-style: none;
+            
+        }
+
+        li{
+
+            display:inline-block;
+
+            margin-right:20px;
+
+            cursor: pointer;
+
+            .function-icon{
+
+                
+                width:20px;
+                height:20px;
+                fill:none;
+                line-height: 1;
+
+            }
+
+            .inactive{
+
+                stroke:grey;
+
+            }
+
+            .in-progress{
+
+                stroke:blue;
+
+            }
+
+            .active{
+
+                stroke:green;
+
+            }
+
+            
+            .lock-inactive{
+
+
+                fill:grey;
+                stroke:none;
+            }
+
+            
+
+            /* Icons position adjustment*/
+            
+            .thumbnail{
+
+                position:relative;
+                top:2.5px;
+
+            }
+
+            .prioritize{
+
+                position:relative;
+                top:2px;
+
+            }
+        
+            .schedule{
+
+                position:relative;
+                top:2.5px;
+
+            }
+
+            .lock{
+
+                position:relative;
+                top:2px;
+
+            }
+
+            .analytics{
+
+                position: relative;
+                top:2px;
+            }
+
+            
+            
+
+        }
+
+        /* Label dropdown */
+
+        .triangle{
+            background-color: black;
+	        transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
+
+        }
+
+        label{
+
+            display:none;
+
+        }
+
+        
+
+
     }
 }

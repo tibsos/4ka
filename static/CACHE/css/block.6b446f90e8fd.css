@@ -1,0 +1,43 @@
+/* line 1, static/scss/app/block.scss */
+.blocks {
+  position: relative;
+  top: 200px;
+  left: 200px; }
+
+/* line 7, static/scss/app/block.scss */
+.block {
+  border: 1px solid black;
+  border-radius: 20px;
+  margin-bottom: 20px; }
+  /* line 12, static/scss/app/block.scss */
+  .block .drag-and-drop {
+    /* list-style-image:none; */
+    position: relative; }
+  /* line 17, static/scss/app/block.scss */
+  .block .fields {
+    position: relative;
+    left: 30px;
+    top: 10px; }
+  /* line 24, static/scss/app/block.scss */
+  .block .field {
+    display: block;
+    margin-bottom: 20px; }
+  /* line 32, static/scss/app/block.scss */
+  .block .active {
+    position: relative;
+    left: 95%;
+    top: 10px; }
+  /* line 38, static/scss/app/block.scss */
+  .block .delete {
+    position: relative;
+    left: 95%;
+    bottom: 10px; }
+  /* line 46, static/scss/app/block.scss */
+  .block .functions ul {
+    list-style: none; }
+  /* line 50, static/scss/app/block.scss */
+  .block .functions li {
+    display: inline-block; }
+  /* line 54, static/scss/app/block.scss */
+  .block .functions label {
+    display: none; }

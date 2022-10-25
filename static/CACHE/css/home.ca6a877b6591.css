@@ -1,0 +1,29 @@
+/* line 1, static/scss/app/home.scss */
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f3f1; }
+
+/* line 10, static/scss/app/home.scss */
+.body-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* line 18, static/scss/app/home.scss */
+.app {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+  width: 70%; }
+
+/* line 25, static/scss/app/home.scss */
+.blocks {
+  position: relative;
+  top: 200px;
+  left: 200px; }

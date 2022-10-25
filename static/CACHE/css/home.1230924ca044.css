@@ -1,0 +1,39 @@
+/* line 1, static/scss/app/home.scss */
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f3f1; }
+
+/* line 10, static/scss/app/home.scss */
+.body-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%; }
+
+/* line 19, static/scss/app/home.scss */
+.app {
+  position: relative;
+  height: 100%;
+  width: 70%;
+  background-color: red;
+  display: block; }
+  /* line 28, static/scss/app/home.scss */
+  .app .methods {
+    padding-top: 200px;
+    width: 100%;
+    height: 100px;
+    text-align: center; }
+    /* line 36, static/scss/app/home.scss */
+    .app .methods div {
+      display: inline-block; }
+  /* line 41, static/scss/app/home.scss */
+  .app .blocks {
+    position: relative;
+    top: 200px;
+    width: clamp(200px, 85%, 100%); }
