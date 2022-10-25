@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/* line 1, c:/users/anna/desktop/рщч/ssilo4ka/recovery/ssilo4ka-abd118d579c5189d724da32d6a8ea5e01af1f8e7/ssilo4ka/static/scss/app/block.scss */
+.block {
+  border: 1px solid black;
+  border-radius: 20px;
+  margin-bottom: 20px; }
+  /* line 6, c:/users/anna/desktop/рщч/ssilo4ka/recovery/ssilo4ka-abd118d579c5189d724da32d6a8ea5e01af1f8e7/ssilo4ka/static/scss/app/block.scss */
+  .block .active {
+    position: relative;
+    left: 95%;
+    top: 10px; }

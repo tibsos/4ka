@@ -1,0 +1,133 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script src="https://unpkg.com/htmx.org@1.8.0"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel='stylesheet' href="{%static 'css/app/design.css'%}">
+    </head>
+    
+    <body>
+        
+        <div class="main">
+
+            <div class="design">
+                
+                <div class="wrapper">
+                    <!-- https://www.youtube.com/watch?v=oWd7SAuCIRM -->
+                    <div class="avatar">
+                        {%if profile.avatar%}
+                        <img id='avatar' src="{{profile.avatar.url}}" alt="@{{profile.user.username}} аватар">
+                        <div class="buttons">
+                            <form method="POST" enctype='multipart/form-data' novalidate="" id="avatar-form-ajax">
+                                {%csrf_token%}
+                                <input type="hidden" name="form_type" value="avatar-form">
+                                {{avatar_form.avatar}}
+                                <button id="select-image">Выбрать картинку</button>
+                                <button id="submit-image" type="submit" style="display: none;"></button>
+                            </form>
+                            <form method="POST" enctype='multipart/form-data' action="{%url 'link:delete-avatar'%}">
+                                {%csrf_token%}
+                                <button id="delete-avatar">Удалить аву</button>
+                            </form>
+                        </div>
+                        {%else%}
+                        <div class="circle">
+                            {%if profile.title%}
+                                <p>{{profile.title|capfirst}}</p>
+                            {%else%}
+                                <p>{{profile.user.username|capfirst}}</p>
+                            {%endif%}
+                        </div>
+                        <div class="buttons">
+                            <form method="POST" enctype='multipart/form-data'>
+                                {%csrf_token%}
+                                <input type="hidden" name="form_type" value="avatar-form">
+                                {{avatar_form.avatar}}
+                                <button id="select-image">Выбрать картинку</button>
+                                <button id="submit-image" type="submit" style="display: none;"></button>
+                            </form>
+                        </div>
+                        {%endif%}
+                    </div>
+
+                    <div class="details">
+                        <input name="profile-title" id='profile-title' value="{{profile.title}}" placeholder="Название ссылочки">
+                        <input name="profile-bio" id='profile-bio' value="{{profile.bio}}" placeholder="Описание ссылочки">
+                    </div>
+                </div>
+                    <div class="premium">
+                        <div class="image-wrapper">
+
+                        </div>
+                        <div class="text">
+                            <h3>Откройте для себя возможности премиум версии.</h3><!-- change -->
+                            <ul>
+                                <li class="feature">Уберите наш логотип с вашей ссылочки</li>
+                                <li class="feature">Анализируйте эффективность вашей ссылочки за все время</li>
+                            </ul>
+                        </div>
+                        <button>Узнать больше</button>
+                    </div>
+                    
+                    <div class="wrapper">
+                        <ul>
+                            {%for theme in themes%}
+                            <li>
+                                <div class="block">
+                                    <label>
+                                        <input type="radio" name='theme' id="theme" value="{{theme.title}}" >
+                                        <div class="image-wrapper">
+                                                <img src="{{theme.preview.url}}" id="{{theme.title}}" alt="{{theme.title}} предпросмотр" class="image">
+                                        </div>
+                                    </label>
+                                    <p class="title">{{theme.title}}</p>
+                                </div>
+                                {%endfor%}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="custom">
+                        <!-- custom appearance info -->
+
+                        <!-- https://iro.js.org/ -->
+                    </div>
+
+                    <div class="wrapper">
+                        <!-- custom appearance -->
+                    </div>
+
+                    <div class="wrapper">
+                        <!-- buttons -->
+                    </div>
+
+                    <div class="wrapper">
+                        <!-- fonts -->
+                    </div>
+                    <div class="wrapper">
+                        <!-- logo -->
+                    </div>
+
+                
+
+            </div>
+                
+            <div class="ssilo4ka">
+                <div class="phone">
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <script src="{%static 'js/app/design.js'%}" ></script>
+    </body>
+
+    <script>
+
+
+    </script>
+
+</html> 

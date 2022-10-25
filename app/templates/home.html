@@ -1,0 +1,131 @@
+{%load static%}
+{% load compress%}
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Дом</title>
+        <meta data-react-helmet="true" name="description" content="Join 25M+ people and link to everything you create, share and sell online. All from the one bio link.">
+
+        <meta data-react-helmet="true" property="og:site_name" content="Ссылочка">
+        <meta data-react-helmet="true" property="og:title" content="Ссылочка: Твоя онлайн жизнь">
+        <meta data-react-helmet="true" property="og:" content="Join 25M+ people and link to everything you create, share and sell online. All from the one bio link.">
+        <meta data-react-helmet="true" property="og:description" content="Ссылочка">
+        <meta data-react-helmet="true" property="og:locale" content="ru">
+        <meta data-react-helmet="true" property="og:type" content="website">
+        <meta data-react-helmet="true" property="og:image" content="">
+        
+
+        <meta name="theme-color" content="f3f3f1">
+        <link rel="icon" href="" type="image/jpg">
+
+        <script src="https://unpkg.com/htmx.org@1.8.0"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+        <link rel='stylesheet' href="{%static 'css/app/home.css'%}">
+        {% compress css %}
+            <link rel='stylesheet' href="{%static 'scss/app/block.scss'%}" type="text/x-scss">
+        {% endcompress %}
+    </head>
+
+    <body>
+
+        <div class='nav'>
+            <div class="logo"><a href="{%url 'app:home'%}">ssilo4ka logo</a></div>
+            <div class="left">
+                <ul class="links">
+                    <li class="link">
+                        <a href="{%url 'app:home'%}">Ссылки</a>
+                    </li>
+                    <li>
+                        <a href="{%url 'app:design'%}">Дизайн</a>
+                    </li>
+                    <li>
+                        <a href="{%url 'app:analytics'%}">Аналитика</a>
+                    </li>
+                </ul>   
+            </div>
+            <div class="right">
+                <ul class="links-right">
+                    <li>
+                        <a href="#">Премиум</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="{%url 'user:logout'%}">Выйти</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        
+        <div class="app">
+            <div class="editable">
+
+            
+                <div class="methods">
+                    <form method="POST">
+                        {%csrf_token%}
+                    <button hx-post="{%url 'app:add-link'%}" hx-target="#blocks">Добавить новую ссылку</button>
+                    </form>
+                    <button id="delete-all">Удалить все</button>
+                </div>
+
+                <div id="blocks">
+                    {%include 'blocks.html'%}
+                </div>
+                
+
+                <div id="delete-all-form" class="delete-all" style="display:none;">
+                    <h4>Начнем с чистого листа?</h4>
+                    <form method="POST">
+                        {%csrf_token%}
+                        <button hx-post="{% url 'app:delete-all'%}" hx-target="#blocks" id="delete-all-btn">Удалить</button>
+                    </form>
+                    <button id="cancel">Отмена</button>
+                </div>
+            </div>
+
+            <div class="preview">
+
+            </div>
+        </div>
+    </body>
+
+    <script>
+
+        document.body.addEventListener('htmx:configRequest',(event)=>{
+        event.detail.headers['X-CSRFToken']="{{csrf_token}}";
+        })
+
+        htmx.onLoad(function(content) {
+    var sortables = content.querySelectorAll(".sortable");
+    for (var i = 0; i < sortables.length; i++) {
+      var sortable = sortables[i];
+      new Sortable(sortable, {
+          animation: 150,
+          ghostClass: 'blue-background-class'
+      });
+    }
+})
+
+        $('#delete-all').on('click',function(){
+            document.getElementById('delete-all-form').style.display='';
+        });
+        $('#cancel').on('click',function(){
+            document.getElementById('delete-all-form').style.display='none';
+        });
+        $('#delete-all-btn').on('click',function(){
+            document.getElementById('delete-all-form').style.display='none';
+        });
+    </script>
+
+</html>
