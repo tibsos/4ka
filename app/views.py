@@ -17,8 +17,10 @@ def ssilo4ka(request):
 
 def home(request):
     c={}
+
     profile=Profile.objects.get(user=request.user)
     c['profile']=profile
+    
     c['blocks']=profile.block.all()
 
     return render(request,'home.html',c)
